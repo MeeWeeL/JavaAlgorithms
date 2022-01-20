@@ -50,7 +50,7 @@ public class Task3 {
             return n;
         }
         return n.multiply(factorial(n.subtract(BigInteger.valueOf(1))));
-    }   // f(n) = O(n!), типичная рекурсия
+    }   // f(n) = O(n), типичный факториал рекурсией
 
     // e)
     public static void e() {
