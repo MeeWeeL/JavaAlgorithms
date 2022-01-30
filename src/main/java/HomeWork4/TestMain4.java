@@ -1,5 +1,7 @@
 package HomeWork4;
 
+import HomeWork4.deque.MyLinkedListForDeque;
+import HomeWork4.deque.MyLinkedListForDequeImpl;
 import HomeWork4.lesson.SimpleLinkedListImpl;
 import HomeWork4.lesson.TwoSideLinkedList;
 import HomeWork4.lesson.TwoSideLinkedListImpl;
@@ -19,7 +21,7 @@ public class TestMain4 {
 
     private static void testLinkedList() {
 
-        MyTwoSideLinkedList<Integer> linkedList = new MyTwoSideLinkedListImpl<>();
+        MyLinkedListForDeque<Integer> linkedList = new MyLinkedListForDequeImpl<>();
 
         linkedList.insertFirst(1);
         linkedList.insertFirst(2);
@@ -39,9 +41,10 @@ public class TestMain4 {
         System.out.println("Find 1: " + linkedList.contains(1));
         System.out.println("Find 4: " + linkedList.contains(4));
         System.out.println("Find 4444: " + linkedList.contains(4444));
-//
+////
         System.out.println("remove first: " + linkedList.removeFirst());
-//        System.out.println("remove 1: " + linkedList.remove(1));
+        System.out.println("remove last: " + linkedList.removeLast());
+        System.out.println("remove 1: " + linkedList.remove(1));
         System.out.println("remove 2: " + linkedList.remove(2));
         System.out.println("remove 4: " + linkedList.remove(4));
         System.out.println("remove 11: " + linkedList.remove(11));
@@ -49,6 +52,7 @@ public class TestMain4 {
 //        linkedList.remove(11);
 //
         linkedList.display();
+        linkedList.displayBack();
 
     }
 

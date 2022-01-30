@@ -4,7 +4,7 @@ public interface Queue<E> {
 
     boolean insert(E value);
 
-    E remove();
+    E remove(E value);
 
     E peekFront();
 
