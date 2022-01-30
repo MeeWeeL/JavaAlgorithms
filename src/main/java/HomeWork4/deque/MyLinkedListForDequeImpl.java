@@ -1,8 +1,8 @@
 package HomeWork4.deque;
 
-import HomeWork4.MyLinkedList;
+import java.util.Iterator;
 
-public class MyLinkedListForDequeImpl<E> implements MyLinkedListForDeque<E> {
+public class MyLinkedListForDequeImpl<E> implements MyLinkedListForDeque<E>, Iterable<E> {
 
     protected int size;
     protected Node<E> first;
@@ -34,12 +34,18 @@ public class MyLinkedListForDequeImpl<E> implements MyLinkedListForDeque<E> {
 
     @Override
     public E getFirst() {
-        return first.item;
+        if (first != null) {
+            return first.item;
+        }
+        return null;
     }
 
     @Override
     public E getLast() {
-        return last.item;
+        if (last != null) {
+            return last.item;
+        }
+        return null;
     }
 
     @Override
@@ -162,5 +168,60 @@ public class MyLinkedListForDequeImpl<E> implements MyLinkedListForDeque<E> {
             current = current.prev;
         }
         return sb.append(" ]").toString();
+    }
+
+    public Node<E> getFirstForItr() {
+        return first;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return new MyIterator<>(this);
+    }
+
+    private class MyIterator<E> implements Iterator<E> {
+        Node<E> currentNode;
+        E next;
+        E current;
+        MyLinkedListForDequeImpl<E> link;
+
+        public MyIterator(MyLinkedListForDequeImpl<E> thelink) {
+            link = thelink;
+            currentNode = link.getFirstForItr();
+            current = link.getFirst();
+            if (current != null) {
+                next = currentNode.next.item;
+            }
+        }
+
+        @Override
+        public boolean hasNext() {
+            if (current != null) {
+                return next != null;
+            }
+            return false;
+        }
+
+        @Override
+        public E next() {
+            current = next;
+            currentNode = currentNode.next;
+            if (currentNode.next != null) {
+                next = currentNode.next.item;
+            } else {
+                next = null;
+            }
+            return currentNode.item;
+        }
+
+        @Override
+        public void remove() {
+            Iterator.super.remove();
+        }
+
+//        @Override
+//        public void forEachRemaining(Consumer<? super E> action) {
+//            Iterator.super.forEachRemaining(action);
+//        }
     }
 }

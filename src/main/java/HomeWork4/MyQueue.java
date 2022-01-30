@@ -18,8 +18,8 @@ public class MyQueue<E> implements Queue<E> {
     }
 
     @Override
-    public E remove() {
-        return data.removeFirst();
+    public E remove(E value) {
+        return null;
     }
 
     @Override

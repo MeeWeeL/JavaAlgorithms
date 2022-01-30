@@ -14,8 +14,8 @@ import java.util.List;
 public class TestMain4 {
 
     public static void main(String[] args) {
-        testLinkedList();
-//        testHomeWork();
+//        testLinkedList();
+        testHomeWork();
 //        testIterator();
     }
 
@@ -31,35 +31,41 @@ public class TestMain4 {
         linkedList.insertFirst(6);
         linkedList.insertFirst(7);
         linkedList.insertFirst(8);
-        linkedList.insertLast(9);
-        linkedList.insertLast(10);
-        linkedList.insertLast(11);
+//        linkedList.insertLast(9);
+//        linkedList.insertLast(10);
+//        linkedList.insertLast(11);
 
         linkedList.display();
-//
-        System.out.println("Find 2: " + linkedList.contains(2));
-        System.out.println("Find 1: " + linkedList.contains(1));
-        System.out.println("Find 4: " + linkedList.contains(4));
-        System.out.println("Find 4444: " + linkedList.contains(4444));
 ////
-        System.out.println("remove first: " + linkedList.removeFirst());
-        System.out.println("remove last: " + linkedList.removeLast());
-        System.out.println("remove 1: " + linkedList.remove(1));
-        System.out.println("remove 2: " + linkedList.remove(2));
+//        System.out.println("Find 2: " + linkedList.contains(2));
+        System.out.println("Find 1: " + linkedList.contains(1));
+//        System.out.println("Find 4: " + linkedList.contains(4));
+//        System.out.println("Find 4444: " + linkedList.contains(4444));
+//////
+//        System.out.println("remove first: " + linkedList.removeFirst());
+//        System.out.println("remove last: " + linkedList.removeLast());
+//        System.out.println("remove 1: " + linkedList.remove(1));
+//        System.out.println("remove 2: " + linkedList.remove(2));
         System.out.println("remove 4: " + linkedList.remove(4));
-        System.out.println("remove 11: " + linkedList.remove(11));
-        System.out.println("remove 111: " + linkedList.remove(111));
-//        linkedList.remove(11);
-//
+//        System.out.println("remove 11: " + linkedList.remove(11));
+//        System.out.println("remove 111: " + linkedList.remove(111));
+////        linkedList.remove(11);
+////
         linkedList.display();
-        linkedList.displayBack();
+//        linkedList.displayBack();
 
     }
 
     private static void testHomeWork() {
         //ДОЛЖНО РАБОТАТЬ!
 
-        SimpleLinkedListImpl<Integer> linkedList = new SimpleLinkedListImpl<>();
+        MyLinkedListForDequeImpl<Integer> linkedList = new MyLinkedListForDequeImpl<>();
+
+        linkedList.insertFirst(1);
+        linkedList.insertFirst(2);
+        linkedList.insertFirst(3);
+        linkedList.insertFirst(4);
+        linkedList.insertFirst(5);
 
         for (Integer value : linkedList) {
             System.out.println("value: " + value);
