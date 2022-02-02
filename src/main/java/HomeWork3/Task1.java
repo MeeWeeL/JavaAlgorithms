@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Task1 {
 
-    static int n = 40;
+    static int n = 50000;
 
     static int[] array = ArrayCreator.getArray(n);
 
