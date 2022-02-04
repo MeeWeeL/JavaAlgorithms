@@ -6,13 +6,16 @@ import java.util.Arrays;
 
 public class Task1 {
 
-    static int countOfNums = 20;
+    static int countOfNums = 30;
     public static void main(String[] args) {
 
 //        Tree<Integer> tree = new TreeImpl<>();
         Tree[] trees = new Tree[countOfNums];
         fillTrees(trees);
         displayAll(trees);
+//        for (int i = 0; i < trees.length; i++) {
+//            System.out.println(trees[i].isBalanced());
+//        }
 
 //        tree.add(60);
 //        tree.add(50);
