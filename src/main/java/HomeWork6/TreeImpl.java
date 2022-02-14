@@ -1,4 +1,4 @@
-package HomewWoek6;
+package HomeWork6;
 
 
 import java.util.Stack;
