@@ -1,7 +1,4 @@
-package HomewWoek6;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
+package HomeWork6;
 
 
 public class Task1 {
